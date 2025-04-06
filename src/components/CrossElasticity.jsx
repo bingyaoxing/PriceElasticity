@@ -371,7 +371,12 @@ const CrossElasticity = () => {
               dataSource={data} 
               columns={columns} 
               rowKey={(record, index) => index}
-              pagination={{ pageSize: 5 }}
+              pagination={{ 
+                pageSize: 10, 
+                showSizeChanger: true, 
+                pageSizeOptions: ['5', '10', '20', '50', '100'],
+                showTotal: (total) => `共 ${total} 条数据`
+              }}
               scroll={{ x: 'max-content' }}
             />
           </Card>
